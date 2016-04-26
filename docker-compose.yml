@@ -1,0 +1,10 @@
+nginx:
+  image: ckulka/rpi-nginx
+  ports:
+    - "80:80"
+  volumes:
+    - /home/joan/gitprojects/GPU-Particles:/var/www/particles
+    - ./nginx.conf:/etc/nginx/nginx.conf
+    - ./logs:/var/logs/nginx/
+  environment:
+    - NGINX_NO_UPDATE
